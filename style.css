@@ -767,6 +767,3 @@ footer .row .social a:hover{
         transform: translate(-50%, -50%) scale(0.65);
     }
 }
-img.lazy{
-    transform: scale(0.5);
-}

@@ -83,35 +83,35 @@
        
     //    lazy load------------------------
 
-        document.addEventListener("DOMContentLoaded", function() {
-        var lazyloadImages = document.querySelectorAll("img.lazy");    
-        var lazyloadThrottleTimeout;
+        // document.addEventListener("DOMContentLoaded", function() {
+        // var lazyloadImages = document.querySelectorAll("img.lazy");    
+        // var lazyloadThrottleTimeout;
         
-        function lazyload () {
-            if(lazyloadThrottleTimeout) {
-                clearTimeout(lazyloadThrottleTimeout);
-            }    
+        // function lazyload () {
+        //     if(lazyloadThrottleTimeout) {
+        //         clearTimeout(lazyloadThrottleTimeout);
+        //     }    
             
-            lazyloadThrottleTimeout = setTimeout(function() {
-                var scrollTop = window.pageYOffset;
-                lazyloadImages.forEach(function(img) {
-                    if(img.offsetTop < (window.innerHeight + scrollTop)) {
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        img.style.transform = `scale(1)`;
-                        img.style.transition = `2s`;
+        //     lazyloadThrottleTimeout = setTimeout(function() {
+        //         var scrollTop = window.pageYOffset;
+        //         lazyloadImages.forEach(function(img) {
+        //             if(img.offsetTop < (window.innerHeight + scrollTop)) {
+        //                 img.src = img.dataset.src;
+        //                 img.classList.remove('lazy');
+        //                 img.style.transform = `scale(1)`;
+        //                 img.style.transition = `2s`;
 
-                    }
-                });
-                if(lazyloadImages.length == 0) { 
-                    document.removeEventListener("scroll", lazyload);
-                    window.removeEventListener("resize", lazyload);
-                    window.removeEventListener("orientationChange", lazyload);
-                }
-            }, 2);
-        }
+        //             }
+        //         });
+        //         if(lazyloadImages.length == 0) { 
+        //             document.removeEventListener("scroll", lazyload);
+        //             window.removeEventListener("resize", lazyload);
+        //             window.removeEventListener("orientationChange", lazyload);
+        //         }
+        //     }, 2);
+        // }
     
-            document.addEventListener("scroll", lazyload);
-            window.addEventListener("resize", lazyload);
-            window.addEventListener("orientationChange", lazyload);
-        });
+        //     document.addEventListener("scroll", lazyload);
+        //     window.addEventListener("resize", lazyload);
+        //     window.addEventListener("orientationChange", lazyload);
+        // });
